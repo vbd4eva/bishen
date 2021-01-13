@@ -1,0 +1,181 @@
+[
+        {
+             "id": 1,
+             "alias": "kiev-food-market",
+             "slides": [{
+            "file": "01-slide.jpg",
+            "alt":""
+        },
+        {
+            "file": "02-slide.jpg",
+            "alt":""
+        },
+        {
+            "file": "03-slide.jpg",
+            "alt":""
+        },
+        {
+            "file": "04-slide.jpg",
+            "alt":""
+        },{
+            "file": "05-slide.jpg",
+            "alt":""
+        },{
+            "file": "06-slide.jpg",
+            "alt":""
+        },{
+            "file": "07-slide.jpg",
+            "alt":""
+        },                
+     ]
+        },
+                {
+             "id": 1,
+             "alias": "envelopes",
+             "slides": [{
+            "file": "01-slide.jpg",
+            "alt":""
+        },
+        {
+            "file": "02-slide.jpg",
+            "alt":""
+        },
+        {
+            "file": "03-slide.jpg",
+            "alt":""
+        },
+        {
+            "file": "04-slide.jpg",
+            "alt":""
+        },{
+            "file": "05-slide.jpg",
+            "alt":""
+        },{
+            "file": "06-slide.jpg",
+            "alt":""
+        },{
+            "file": "07-slide.jpg",
+            "alt":""
+        },                
+     ]
+        },
+                {
+             "id": 1,
+             "alias": "keller-pr-events",
+             "slides": [{
+            "file": "01-slide.jpg",
+            "alt":""
+        },
+        {
+            "file": "02-slide.jpg",
+            "alt":""
+        },
+        {
+            "file": "03-slide.jpg",
+            "alt":""
+        },
+        {
+            "file": "04-slide.jpg",
+            "alt":""
+        },{
+            "file": "05-slide.jpg",
+            "alt":""
+        },{
+            "file": "06-slide.jpg",
+            "alt":""
+        },{
+            "file": "07-slide.jpg",
+            "alt":""
+        },                
+     ]
+        },
+                {
+             "id": 1,
+             "alias": "bistro-pekarya",
+             "slides": [{
+            "file": "01-slide.jpg",
+            "alt":""
+        },
+        {
+            "file": "02-slide.jpg",
+            "alt":""
+        },
+        {
+            "file": "03-slide.jpg",
+            "alt":""
+        },
+        {
+            "file": "04-slide.jpg",
+            "alt":""
+        },{
+            "file": "05-slide.jpg",
+            "alt":""
+        },{
+            "file": "06-slide.jpg",
+            "alt":""
+        },{
+            "file": "07-slide.jpg",
+            "alt":""
+        },                
+     ]
+        },
+                {
+             "id": 1,
+             "alias": "atlas",
+             "slides": [{
+            "file": "01-slide.jpg",
+            "alt":""
+        },
+        {
+            "file": "02-slide.jpg",
+            "alt":""
+        },
+        {
+            "file": "03-slide.jpg",
+            "alt":""
+        },
+        {
+            "file": "04-slide.jpg",
+            "alt":""
+        },{
+            "file": "05-slide.jpg",
+            "alt":""
+        },{
+            "file": "06-slide.jpg",
+            "alt":""
+        },{
+            "file": "07-slide.jpg",
+            "alt":""
+        },                
+     ]
+        },        {
+             "id": 1,
+             "alias": "saperavi",
+             "slides": [{
+            "file": "01-slide.jpg",
+            "alt":""
+        },
+        {
+            "file": "02-slide.jpg",
+            "alt":""
+        },
+        {
+            "file": "03-slide.jpg",
+            "alt":""
+        },
+        {
+            "file": "04-slide.jpg",
+            "alt":""
+        },{
+            "file": "05-slide.jpg",
+            "alt":""
+        },{
+            "file": "06-slide.jpg",
+            "alt":""
+        },{
+            "file": "07-slide.jpg",
+            "alt":""
+        },                
+     ]
+        },
+    ]

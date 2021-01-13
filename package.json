@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "1. установка parcel (https://parceljs.org/)\r    - npm init --y\r    - \"npm install parcel-bundler --save-dev\" <- команда для Установки Парсел",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "handlebars": "^4.7.6"
+  },
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
     "sass": "^1.27.0"
