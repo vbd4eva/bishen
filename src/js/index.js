@@ -1,7 +1,11 @@
 import "../sass/main.scss";
 
-import "./double-arrows";
+import "./clients-slider/index";
 
-import "./header-hide";
+// import "./double-arrows";
 
-import "./clients-slider";
+// import "./header-hide";
+
+// import "./clients-slider";
+
+// import "./scroll-to-the-viewport-top";

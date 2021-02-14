@@ -30,7 +30,7 @@
      ]
         },
                 {
-             "id": 1,
+             "id": 2,
              "alias": "envelopes",
              "slides": [{
             "file": "01-slide.jpg",
@@ -60,7 +60,7 @@
      ]
         },
                 {
-             "id": 1,
+             "id": 3,
              "alias": "keller-pr-events",
              "slides": [{
             "file": "01-slide.jpg",
@@ -90,7 +90,7 @@
      ]
         },
                 {
-             "id": 1,
+             "id": 4,
              "alias": "bistro-pekarya",
              "slides": [{
             "file": "01-slide.jpg",
@@ -120,7 +120,7 @@
      ]
         },
                 {
-             "id": 1,
+             "id": 5,
              "alias": "atlas",
              "slides": [{
             "file": "01-slide.jpg",
@@ -148,8 +148,9 @@
             "alt":""
         },                
      ]
-        },        {
-             "id": 1,
+        },       
+         {
+             "id": 6,
              "alias": "saperavi",
              "slides": [{
             "file": "01-slide.jpg",
