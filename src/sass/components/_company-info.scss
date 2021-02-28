@@ -1,0 +1,29 @@
+.company-info {
+  color: #fff;
+  text-shadow: #000 1px 1px 5px;
+  &__logo {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    // transition: 500ms;
+  }
+
+  &__h1 {
+    text-transform: capitalize;
+  }
+
+  &__contacts {
+    position: absolute;
+    bottom: 52px;
+    left: 52px;
+  }
+}
+
+.contacts--decore {
+  color: #3fc1c0;
+}
+
+.contacts--telephone {
+  color: inherit;
+  text-decoration: inherit;
+}
