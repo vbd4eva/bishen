@@ -1,8 +1,10 @@
 import "./init-slick-slider-JQuery";
 
-import "./init-IntersectionObserver";
+import "../buttons/double-arrows";
 
-import "./finish-scroll-up-slider";
+// import "./init-IntersectionObserver";
+
+// import "./finish-scroll-up-slider";
 
 
 

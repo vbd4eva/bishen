@@ -1,6 +1,9 @@
-import "../sass/main.scss";
+import "./sass/main.scss";
 
-import "./clients-slider/index";
+//init show-hide toggle blocks
+import './js/mobile-toogle/init';
+
+import "./js/clients-slider/index";
 
 // import "./double-arrows";
 

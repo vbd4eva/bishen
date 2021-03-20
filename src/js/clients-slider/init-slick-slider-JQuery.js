@@ -8,6 +8,7 @@ const { sliderCustomButtons } = stateSliderClients.html;
 
 
 //init slick slider
-  $(singleSlider).slick(
-    sliderCustomButtons
-  );   
+$(singleSlider).slick({
+  // lazyLoad: 'ondemand',
+  ...sliderCustomButtons
+} );   
