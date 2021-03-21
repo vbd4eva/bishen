@@ -23,17 +23,24 @@ const stateSliderClients = {
     currentSlider: {
         value: null,
         get() {
+            // console.log('get() currentSlider value', this.value);
             return this.value;
         },
         set(value) {
             this.value = value;
+            // console.log('set(value)', this.value);
         }
     },
 
     finishScrollUp: {
         eventDelay: 250,
-    }
+    },
     
+
+    getClientsSlidersIDs(){
+        const refSlider = this.refs.singleSlider;
+        return [...document.querySelectorAll(refSlider)].map(slider=>slider.id);
+    }
 }
 
 export default stateSliderClients;

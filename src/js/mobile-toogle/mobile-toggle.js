@@ -4,6 +4,8 @@ export default class MobileToggle {
         this._setRefs(dataMark) && this._init();
     }
 
+
+
     _setRefs(dataMark) { 
         const containerMark = `[${dataMark}]`;
         const buttonMark = `[${dataMark}-button]`;
@@ -26,17 +28,24 @@ export default class MobileToggle {
     };
 
     _init() { 
-        this.refs.buttonEl.addEventListener("click", this._onClick.bind(this));
+        this.refs.buttonEl.addEventListener("click", this._toggleMenu.bind(this));
 
-        const menuCloseLinks = this.refs.containerEl.querySelectorAll('.menu-close');
-        menuCloseLinks.forEach(
-            link => {
-                link.addEventListener("click", this._onClick.bind(this));
-            }
-        );        
+        this.refs.containerEl.addEventListener('click', this._containerClickHandler.bind(this));
     };
 
-    _onClick() { 
+
+    _closeAll() {
+
+        this.refs.buttonEl.classList.remove("is-open");
+
+        this.refs.containerEl.classList.remove("is-open");   
+
+        this.refs.buttonEl.setAttribute("aria-expanded", false);
+        
+        document.documentElement.classList.remove('y-scroll-off');
+    };
+
+    _toggleMenu() { 
 
         const expanded = this.refs.buttonEl.getAttribute("aria-expanded") === "true";
         // const expanded = this.refs.buttonEl.getAttribute("aria-expanded") === "true" || false;
@@ -65,6 +74,14 @@ export default class MobileToggle {
     //     e.stopPropagation();
     //     console.log(e);
     // }
+
+    _containerClickHandler(e) {
+        e.stopPropagation();
+        // console.log(e.target.classList.contains('js-mobile-menu-close'));
+
+        if (e.target.classList.contains('js-mobile-menu-close'))
+            this._closeAll();
+    }
 
 }
 
