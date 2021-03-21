@@ -189,7 +189,90 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/process/browser.js":[function(require,module,exports) {
+},{"./..\\images\\theme\\Corners.gif":[["Corners.86e60c37.gif","images/theme/Corners.gif"],"images/theme/Corners.gif"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"js/clients-slider/stateSliderClients.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+// object-dictionary of constants and settings of the "Clients" block
+// объект-словарь констант и настроек блока "Клиенты Слайдер"
+var stateSliderClients = {
+  refs: {
+    container: '.js-clients',
+    singleSlider: '.js-client-slider'
+  },
+  html: {
+    sliderCustomButtons: {
+      prevArrow: '<button class="client-slider__arrow double-arrow js-double-arrow-animate" aria-label="Previous" type="button">предыдущий слайд</button>',
+      nextArrow: '<button class="client-slider__arrow double-arrow js-double-arrow-animate" aria-label="Next" type="button">следующий слайд</button>'
+    }
+  },
+  intersectionObserver: {
+    options: {
+      threshold: 0.51
+    }
+  },
+  currentSlider: {
+    value: null,
+    get: function get() {
+      // console.log('get() currentSlider value', this.value);
+      return this.value;
+    },
+    set: function set(value) {
+      this.value = value; // console.log('set(value)', this.value);
+    }
+  },
+  finishScrollUp: {
+    eventDelay: 250
+  },
+  getClientsSlidersIDs: function getClientsSlidersIDs() {
+    var refSlider = this.refs.singleSlider;
+    return _toConsumableArray(document.querySelectorAll(refSlider)).map(function (slider) {
+      return slider.id;
+    });
+  }
+};
+var _default = stateSliderClients;
+exports.default = _default;
+},{}],"js/clients-slider/clients-in-slider-menu.js/init.js":[function(require,module,exports) {
+"use strict";
+
+var _stateSliderClients = _interopRequireDefault(require("../stateSliderClients"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var clientSliderIdList = _stateSliderClients.default.getClientsSlidersIDs();
+
+function getMenuHtml() {
+  if (!clientSliderIdList) return "Меню Пустое!";
+  var listHtml = clientSliderIdList.map(function (id) {
+    return "<li class=\"clients-in-slider-menu__item\"><a href=\"#".concat(id, "\" class=\"js-mobile-menu-close clients-in-slider-menu__link\">").concat(id, "</a></li>");
+  }).join(''); // console.log(listHtml)
+
+  return "<ul class=\"clients-in-slider-menu__list\">".concat(listHtml, "</ul>");
+}
+
+function initMenu() {
+  document.querySelector('.clients-in-slider-menu').innerHTML = getMenuHtml();
+}
+
+initMenu();
+},{"../stateSliderClients":"js/clients-slider/stateSliderClients.js"}],"../node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -14289,46 +14372,14 @@ var define;
 
 }));
 
-},{"jquery":"../node_modules/jquery/dist/jquery.js"}],"js/clients-slider/stateSliderClients.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
+},{"jquery":"../node_modules/jquery/dist/jquery.js"}],"js/buttons/double-arrows.js":[function(require,module,exports) {
+document.addEventListener("click", function (e) {
+  if (!e.target.classList.contains("js-double-arrow-animate")) return;
+  e.target.classList.add("double-arrow--animate");
+  setTimeout(function () {
+    e.target.classList.remove("double-arrow--animate");
+  }, 1000);
 });
-exports.default = void 0;
-// object-dictionary of constants and settings of the "Clients" block
-// объект-словарь констант и настроек блока "Клиенты Слайдер"
-var stateSliderClients = {
-  refs: {
-    container: '.js-clients',
-    singleSlider: '.js-client-slider'
-  },
-  html: {
-    sliderCustomButtons: {
-      prevArrow: '<button class="client-slider__arrow double-arrow js-double-arrow-animate" aria-label="Previous" type="button">предыдущий слайд</button>',
-      nextArrow: '<button class="client-slider__arrow double-arrow js-double-arrow-animate" aria-label="Next" type="button">следующий слайд</button>'
-    }
-  },
-  intersectionObserver: {
-    options: {
-      threshold: 0.51
-    }
-  },
-  currentSlider: {
-    value: null,
-    get: function get() {
-      return this.value;
-    },
-    set: function set(value) {
-      this.value = value;
-    }
-  },
-  finishScrollUp: {
-    eventDelay: 250
-  }
-};
-var _default = stateSliderClients;
-exports.default = _default;
 },{}],"js/clients-slider/init-slick-slider-JQuery.js":[function(require,module,exports) {
 "use strict";
 
@@ -14336,15 +14387,23 @@ var _jquery = _interopRequireDefault(require("jquery"));
 
 var _slickCarousel = _interopRequireDefault(require("slick-carousel"));
 
+require("../buttons/double-arrows");
+
 var _stateSliderClients = _interopRequireDefault(require("./stateSliderClients"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var singleSlider = _stateSliderClients.default.refs.singleSlider;
 var sliderCustomButtons = _stateSliderClients.default.html.sliderCustomButtons; //init slick slider
 
-(0, _jquery.default)(singleSlider).slick(sliderCustomButtons);
-},{"jquery":"../node_modules/jquery/dist/jquery.js","slick-carousel":"../node_modules/slick-carousel/slick/slick.js","./stateSliderClients":"js/clients-slider/stateSliderClients.js"}],"js/clients-slider/init-IntersectionObserver.js":[function(require,module,exports) {
+(0, _jquery.default)(singleSlider).slick(_objectSpread({}, sliderCustomButtons));
+},{"jquery":"../node_modules/jquery/dist/jquery.js","slick-carousel":"../node_modules/slick-carousel/slick/slick.js","../buttons/double-arrows":"js/buttons/double-arrows.js","./stateSliderClients":"js/clients-slider/stateSliderClients.js"}],"js/clients-slider/init-IntersectionObserver.js":[function(require,module,exports) {
 "use strict";
 
 var _stateSliderClients = _interopRequireDefault(require("./stateSliderClients"));
@@ -14356,12 +14415,13 @@ var intersectionObserver = _stateSliderClients.default.intersectionObserver,
 var _stateSliderClients$r = _stateSliderClients.default.refs,
     container = _stateSliderClients$r.container,
     singleSlider = _stateSliderClients$r.singleSlider;
-var clientSliders = document.querySelectorAll("".concat(container, " > ").concat(singleSlider));
+var clientSliders = document.querySelectorAll("".concat(container, " > ").concat(singleSlider)); // const clientSliders = stateSliderClients.getClientsSliders();
 
 var onEntry = function onEntry(entries, observer) {
   entries.forEach(function (entrie) {
     if (entrie.isIntersecting) {
-      currentSlider.set(entrie.target); // console.log("slider "+stateSliderClients.currentSlider.get().id+" is current!");
+      currentSlider.set(entrie.target);
+      console.log("slider " + _stateSliderClients.default.currentSlider.get().id + " is current!");
     }
   });
 };
@@ -14457,6 +14517,7 @@ function stopScrollEventListener() {
     return console.log('ЗАКОНЧИЛИ ПРОКРУТКУ' + Date.now());
   };
   var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 250;
+  console.log('добавляем слушатель на SCROLL');
   window.addEventListener('scroll', (0, _debounce.debounce)(callback, delay));
 }
 
@@ -14478,29 +14539,144 @@ var scrollToTop = function scrollToTop() {
       dataset = _currentSlider$get.dataset,
       offsetHeight = _currentSlider$get.offsetHeight;
 
-  var scrollY = offsetHeight * dataset.id;
+  var scrollY = offsetHeight * dataset.id; // console.log(location.hash);
+
+  console.log('scrollY', scrollY, 'dataset.id', dataset.id);
+  scrollToY(scrollY);
+};
+
+function scrollToY(scrollY) {
   window.scrollTo({
     top: scrollY,
     behavior: 'smooth'
   });
-};
+}
 
 (0, _stopScrollListener.default)(scrollToTop, eventDelay);
-},{"./stateSliderClients":"js/clients-slider/stateSliderClients.js","./stop-scroll-listener":"js/clients-slider/stop-scroll-listener.js"}],"js/clients-slider/index.js":[function(require,module,exports) {
+},{"./stateSliderClients":"js/clients-slider/stateSliderClients.js","./stop-scroll-listener":"js/clients-slider/stop-scroll-listener.js"}],"js/clients-slider/init.js":[function(require,module,exports) {
 "use strict";
+
+require("./clients-in-slider-menu.js/init");
 
 require("./init-slick-slider-JQuery");
 
 require("./init-IntersectionObserver");
 
 require("./finish-scroll-up-slider");
-},{"./init-slick-slider-JQuery":"js/clients-slider/init-slick-slider-JQuery.js","./init-IntersectionObserver":"js/clients-slider/init-IntersectionObserver.js","./finish-scroll-up-slider":"js/clients-slider/finish-scroll-up-slider.js"}],"js/index.js":[function(require,module,exports) {
+},{"./clients-in-slider-menu.js/init":"js/clients-slider/clients-in-slider-menu.js/init.js","./init-slick-slider-JQuery":"js/clients-slider/init-slick-slider-JQuery.js","./init-IntersectionObserver":"js/clients-slider/init-IntersectionObserver.js","./finish-scroll-up-slider":"js/clients-slider/finish-scroll-up-slider.js"}],"js/mobile-toogle/mobile-toggle.js":[function(require,module,exports) {
 "use strict";
 
-require("../sass/main.scss");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
 
-require("./clients-slider/index");
-},{"../sass/main.scss":"sass/main.scss","./clients-slider/index":"js/clients-slider/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var MobileToggle = /*#__PURE__*/function () {
+  function MobileToggle(dataMark) {
+    _classCallCheck(this, MobileToggle);
+
+    this._setRefs(dataMark) && this._init();
+  }
+
+  _createClass(MobileToggle, [{
+    key: "_setRefs",
+    value: function _setRefs(dataMark) {
+      var containerMark = "[".concat(dataMark, "]");
+      var buttonMark = "[".concat(dataMark, "-button]");
+      var containerEl = document.querySelector(containerMark);
+      var buttonEl = document.querySelector(buttonMark);
+      this.refs = {
+        containerEl: containerEl,
+        buttonEl: buttonEl
+      };
+      return this._checkRefs(containerMark);
+    }
+  }, {
+    key: "_checkRefs",
+    value: function _checkRefs(containerMark) {
+      if (!this.refs.containerEl || !this.refs.buttonEl) {
+        this.error = "Ошибка! : переданній єлемент " + containerMark + " не найден";
+        console.log(this.error);
+        return;
+      }
+
+      return true;
+    }
+  }, {
+    key: "_init",
+    value: function _init() {
+      this.refs.buttonEl.addEventListener("click", this._toggleMenu.bind(this));
+      this.refs.containerEl.addEventListener('click', this._containerClickHandler.bind(this));
+    }
+  }, {
+    key: "_closeAll",
+    value: function _closeAll() {
+      this.refs.buttonEl.classList.remove("is-open");
+      this.refs.containerEl.classList.remove("is-open");
+      this.refs.buttonEl.setAttribute("aria-expanded", false);
+      document.documentElement.classList.remove('y-scroll-off');
+    }
+  }, {
+    key: "_toggleMenu",
+    value: function _toggleMenu() {
+      var expanded = this.refs.buttonEl.getAttribute("aria-expanded") === "true"; // const expanded = this.refs.buttonEl.getAttribute("aria-expanded") === "true" || false;
+      // this._listenScroll(!expanded);
+
+      this.refs.buttonEl.classList.toggle("is-open");
+      this.refs.buttonEl.setAttribute("aria-expanded", !expanded);
+      this.refs.containerEl.classList.toggle("is-open");
+      document.documentElement.classList.toggle('y-scroll-off');
+    } // _listenScroll(resolution) { 
+    //     if (resolution) {
+    //         document.addEventListener('scroll', this._stopScrollPropagation);
+    //     }
+    //     else {
+    //         document.removeEventListener('scroll', this._stopScrollPropagation);
+    //     }
+    // }
+    // _stopScrollPropagation(e) { 
+    //     e.stopPropagation();
+    //     console.log(e);
+    // }
+
+  }, {
+    key: "_containerClickHandler",
+    value: function _containerClickHandler(e) {
+      e.stopPropagation(); // console.log(e.target.classList.contains('js-mobile-menu-close'));
+
+      if (e.target.classList.contains('js-mobile-menu-close')) this._closeAll();
+    }
+  }]);
+
+  return MobileToggle;
+}();
+
+exports.default = MobileToggle;
+},{}],"js/mobile-toogle/init.js":[function(require,module,exports) {
+"use strict";
+
+var _mobileToggle = _interopRequireDefault(require("./mobile-toggle"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//инициализация "мобильных меню"
+var contactsMobileToggle = new _mobileToggle.default('data-contacts');
+var clientListMobileToggle = new _mobileToggle.default('data-menu');
+},{"./mobile-toggle":"js/mobile-toogle/mobile-toggle.js"}],"index.js":[function(require,module,exports) {
+"use strict";
+
+require("./sass/main.scss");
+
+require("./js/clients-slider/init");
+
+require("./js/mobile-toogle/init");
+},{"./sass/main.scss":"sass/main.scss","./js/clients-slider/init":"js/clients-slider/init.js","./js/mobile-toogle/init":"js/mobile-toogle/init.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -14528,7 +14704,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "2347" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1626" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -14704,5 +14880,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/index.js"], null)
-//# sourceMappingURL=/js.00a46daa.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
+//# sourceMappingURL=/src.e31bb0bc.js.map
