@@ -1,0 +1,68 @@
+.company-info {
+  --company-info--pading: 22px;
+
+  //
+  position: relative;
+
+  width: inherit;
+  height: inherit;
+
+  padding: var(--company-info--pading);
+
+  //
+
+  &__logo {
+    position: absolute;
+    top: var(--company-info--pading);
+    right: var(--company-info--pading);
+    // transition: 500ms;
+  }
+
+  &__title {
+    margin: 0;
+    padding: var(--company-info--pading);
+  }
+
+  &__contacts {
+    position: absolute;
+    bottom: 52px;
+    left: 52px;
+
+    line-height: 1.5em;
+  }
+}
+
+.contacts--decore {
+  color: #3fc1c0;
+}
+
+.contacts--telephone {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+//
+.downLeftCorner {
+  background: url(../images/theme/Corners.gif) no-repeat left;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: var(--company-info--pading);
+  left: var(--company-info--pading);
+}
+.topLeftCorner {
+  background: url(../images/theme/Corners.gif) no-repeat center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: var(--company-info--pading);
+  left: var(--company-info--pading);
+}
+.downRightCorner {
+  background: url(../images/theme/Corners.gif) no-repeat right;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: var(--company-info--pading);
+  right: var(--company-info--pading);
+}

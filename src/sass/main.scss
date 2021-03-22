@@ -1,9 +1,13 @@
 @import './utils/modify-modern-normalize';
 
+@import './utils/variables';
+@import './utils/common';
 @import './utils/util-classes';
+@import './utils/placeholders';
 
 @import './components/header';
+@import './components/company-info';
+
+// @import './components/clients-in-slider-menu';
 
 @import './components/clients';
-
-@import './components/double-arrow';

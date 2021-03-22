@@ -1,0 +1,48 @@
+
+<!-- <header class="header js-header">
+
+    <include src="./partials/company-info.html"></include>
+
+</header> -->
+
+
+
+    <header class="header js-header">
+    
+        <div class="header__contacts">
+
+            <button class="header__toggle-btn" type="button" aria-controls="contacts-mobile-container" aria-expanded="false"
+                data-contacts-button="">
+                <svg width="40px" height="40px" aria-label="переключатель информационного блока">
+                    <use class="icon-open" href="./images/theme/svg-images.svg#iconmonstr-info-3"></use>
+                    <use class="icon-close" href="./images/theme/svg-images.svg#iconmonstr-info-4"></use>
+                </svg>
+            </button>
+
+            <div class="header__toggle-container" data-contacts>
+
+                <!-- company-info.html -->
+                <include src="./partials/company-info.html"></include>
+            </div>
+
+        </div>
+
+        <div class="header__menu">
+            <button class="header__toggle-btn" type="button" aria-controls="menu-mobile-container" aria-expanded="false"
+                data-menu-button="">
+                <svg width="40px" height="40px" aria-label="переключатель информационного блока">
+                    <use class="icon-open" href="./images/theme/svg-images.svg#iconmonstr-menu-5"></use>
+                    <use class="icon-close" href="./images/theme/svg-images.svg#iconmonstr-menu-6"></use>
+                </svg>
+            </button>
+            <div class="header__toggle-container" data-menu="">
+
+                <!-- clients-in-slider-menu -->
+                <include src="./partials/clients-in-slider-menu.html"></include>
+                
+            </div>
+        </div>
+
+
+    
+    </header>
