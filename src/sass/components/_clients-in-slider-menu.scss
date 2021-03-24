@@ -1,4 +1,6 @@
 .clients-in-slider-menu {
+  $opacity--cover-all-area: 0.13;
+
   position: absolute;
   top: calc(50% - 25px);
   left: 50%;
@@ -23,26 +25,21 @@
     padding: 0;
     text-align: center;
 
-    &:before {
-      background-color: crimson !important;
-    }
-
     &:before,
     &:after {
-      @extend %bgc-opacity;
+      @extend %transition;
+      @extend %cover-all-area;
       // @extend %init-scale;
       @extend %hover-scale;
+      // opacity: 0.13;
     }
 
     &:hover:before {
-      opacity: 0;
-
+      opacity: 0.26;
       transition-timing-function: cubic-bezier(0.6, -0.28, 0.74, 0.05);
     }
-
     &:hover:after {
-      opacity: 26%;
-
+      opacity: 0;
       transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
     }
   }
@@ -55,32 +52,35 @@
     position: relative;
     z-index: 9;
 
+    @extend %transition;
     @extend %hover-scale;
   }
-}
 
-%bgc-opacity {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
+  %cover-all-area {
+    content: '';
 
-  display: block;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 
-  background-color: $color--sea-wave;
-  opacity: 13%;
-  transition: opacity 250ms linear;
-}
+    display: block;
+    width: 100%;
+    height: 100%;
 
-%hover-scale {
-  transition-property: transform;
-  transition-duration: 250ms;
+    opacity: $opacity--cover-all-area;
+    background-color: $color--sea-wave;
+  }
 
-  transform: scale(1);
+  %hover-scale {
+    transform: scale(1);
 
-  &:hover {
-    transform: scale(1.3);
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+
+  %transition {
+    transition-property: transform, opacity;
+    transition-duration: 250ms;
   }
 }
