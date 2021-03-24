@@ -325,11 +325,9 @@ address {
   background-color: crimson !important;
 }
 .clients-in-slider-menu__item:hover:before {
-  opacity: 0;
   transition-timing-function: cubic-bezier(0.6, -0.28, 0.74, 0.05);
 }
 .clients-in-slider-menu__item:hover:after {
-  opacity: 26%;
   transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 .clients-in-slider-menu__link {
@@ -348,6 +346,7 @@ address {
   width: 100%;
   height: 100%;
   background-color: #3fc1c0;
+  opacity: 13%;
 }
 
 .clients-in-slider-menu__item:before, .clients-in-slider-menu__item:after, .clients-in-slider-menu__link {
