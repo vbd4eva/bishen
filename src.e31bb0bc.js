@@ -14668,7 +14668,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //инициализация "мобильных меню"
 var contactsMobileToggle = new _mobileToggle.default('data-contacts');
 var clientListMobileToggle = new _mobileToggle.default('data-menu');
-},{"./mobile-toggle":"js/mobile-toogle/mobile-toggle.js"}],"index.js":[function(require,module,exports) {
+},{"./mobile-toggle":"js/mobile-toogle/mobile-toggle.js"}],"js/geometryShow.js":[function(require,module,exports) {
+var indicate = {
+  w: document.documentElement.clientWidth,
+  h: document.documentElement.clientHeight
+};
+var styles = "\n     position: fixed;\n    top: 1px;\n    left: 1px;\n    background: #0000007a;\n    color: ivory;";
+var indicator = "<div style=\"".concat(styles, "\">\n                        <div> W: ").concat(indicate.w, " </div>\n                        <div> H: ").concat(indicate.h, " </div>\n</div>"); // document.documentElement.append("@@@@");
+// document.documentElement.append(indicator);
+
+document.documentElement.insertAdjacentHTML("beforeend", indicator); // console.log(indicate);
+},{}],"index.js":[function(require,module,exports) {
 "use strict";
 
 require("./sass/main.scss");
@@ -14676,7 +14686,9 @@ require("./sass/main.scss");
 require("./js/clients-slider/init");
 
 require("./js/mobile-toogle/init");
-},{"./sass/main.scss":"sass/main.scss","./js/clients-slider/init":"js/clients-slider/init.js","./js/mobile-toogle/init":"js/mobile-toogle/init.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require("./js/geometryShow");
+},{"./sass/main.scss":"sass/main.scss","./js/clients-slider/init":"js/clients-slider/init.js","./js/mobile-toogle/init":"js/mobile-toogle/init.js","./js/geometryShow":"js/geometryShow.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -14704,7 +14716,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "11060" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "16099" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
