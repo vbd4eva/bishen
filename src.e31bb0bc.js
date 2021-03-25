@@ -14674,10 +14674,8 @@ var indicate = {
   h: document.documentElement.clientHeight
 };
 var styles = "\n     position: fixed;\n    top: 1px;\n    left: 1px;\n    background: #0000007a;\n    color: ivory;";
-var indicator = "<div style=\"".concat(styles, "\">\n                        <div> W: ").concat(indicate.w, " </div>\n                        <div> H: ").concat(indicate.h, " </div>\n</div>"); // document.documentElement.append("@@@@");
-// document.documentElement.append(indicator);
-
-document.documentElement.insertAdjacentHTML("beforeend", indicator); // console.log(indicate);
+var indicator = "<div style=\"".concat(styles, "\">\n                        <div> W: ").concat(indicate.w, " </div>\n                        <div> H: ").concat(indicate.h, " </div>\n</div>");
+document.documentElement.insertAdjacentHTML("beforeend", indicator);
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
 
@@ -14716,7 +14714,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "16099" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "18946" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

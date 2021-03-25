@@ -227,10 +227,9 @@ address {
   fill: #ffffff;
 }
 .header__toggle-container {
-  display: none;
-}
-.header__toggle-container.is-open {
+  pointer-events: none;
   display: block;
+  opacity: 0;
   position: absolute;
   z-index: 91;
   left: 0;
@@ -238,6 +237,11 @@ address {
   width: 100%;
   height: 100vh;
   background-color: #000000;
+  transition: opacity 250ms ease-in-out;
+}
+.header__toggle-container.is-open {
+  pointer-events: initial;
+  opacity: 1;
 }
 
 .company-info {
@@ -301,9 +305,11 @@ address {
 
 .clients-in-slider-menu {
   position: absolute;
-  top: calc(50% - 25px);
+  top: calc(50%);
   left: 50%;
   transform: translate(-50%, -50%);
+  height: 100%;
+  max-height: 520px;
 }
 .clients-in-slider-menu__list {
   position: relative;
@@ -357,6 +363,32 @@ address {
 .clients-in-slider-menu .clients-in-slider-menu__item:before, .clients-in-slider-menu .clients-in-slider-menu__item:after, .clients-in-slider-menu .clients-in-slider-menu__link {
   transition-property: transform, opacity;
   transition-duration: 250ms;
+}
+
+.show-hide-effect {
+  -webkit-perspective: 1300px;
+  -moz-perspective: 1300px;
+  perspective: 1300px;
+}
+.show-hide-effect > * {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotateX(-70deg);
+  -moz-transform: rotateX(-70deg);
+  -ms-transform: rotateX(-70deg);
+  transform: rotateX(-70deg);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 0;
+}
+.is-open .show-hide-effect > * {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  -ms-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  opacity: 1;
 }
 
 .double-arrow:before, .double-arrow:after {
