@@ -54,20 +54,26 @@
   }
 
   &__toggle-container {
-    display: none;
+    pointer-events: none;
+
+    display: block;
+    opacity: 0;
+
+    position: absolute;
+    z-index: 91;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background-color: $color--dark;
+
+    transition: opacity 250ms ease-in-out;
 
     &.is-open {
-      display: block;
-
-      position: absolute;
-      z-index: 91;
-      left: 0;
-      bottom: 0;
-
-      width: 100%;
-      height: 100vh;
-
-      background-color: $color--dark;
+      pointer-events: initial;
+      opacity: 1;
     }
   }
 

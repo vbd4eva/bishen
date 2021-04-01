@@ -1,24 +1,121 @@
 .clients-in-slider-menu {
+  $opacity--cover-all-area: 0.13;
+
   position: absolute;
-  top: 50%;
+  top: calc(50%);
   left: 50%;
   transform: translate(-50%, -50%);
+  height: 100%;
+  max-height: 520px;
+  // overflow-y: auto;
 
   &__list {
+    position: relative;
+    min-width: 250px;
+    min-height: 500px;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    // outline: 1px solid $color--sea-wave;
   }
 
   &__item {
+    position: relative;
     list-style-type: none;
-    padding: 10px;
+    padding: 0;
     text-align: center;
+
+    &:before,
+    &:after {
+      @extend %transition;
+      @extend %cover-all-area;
+      // @extend %init-scale;
+      @extend %hover-scale;
+      // opacity: 0.13;
+    }
+
+    &:hover:before {
+      opacity: 0.26;
+      transition-timing-function: cubic-bezier(0.6, -0.28, 0.74, 0.05);
+    }
+    &:hover:after {
+      opacity: 0;
+      transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
   }
 
   &__link {
-    color: $color--white;
+    color: $color--pale;
     text-decoration: none;
-    padding: 5px;
+    padding: 15px;
     display: block;
+    position: relative;
+    z-index: 9;
+
+    @extend %transition;
+    @extend %hover-scale;
+  }
+
+  %cover-all-area {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    opacity: $opacity--cover-all-area;
+    background-color: $color--sea-wave;
+  }
+
+  %hover-scale {
+    transform: scale(1);
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+
+  %transition {
+    transition-property: transform, opacity;
+    transition-duration: 250ms;
+  }
+}
+
+.show-hide-effect {
+  // .md-modal
+  -webkit-perspective: 1300px;
+  -moz-perspective: 1300px;
+  perspective: 1300px;
+  //
+
+  & > * {
+    // .md-content
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: rotateX(-70deg);
+    -moz-transform: rotateX(-70deg);
+    -ms-transform: rotateX(-70deg);
+    transform: rotateX(-70deg);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    opacity: 0;
+    //
+  }
+
+  .is-open & > * {
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    opacity: 1;
   }
 }
