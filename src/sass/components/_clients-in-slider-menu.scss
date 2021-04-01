@@ -2,9 +2,12 @@
   $opacity--cover-all-area: 0.13;
 
   position: absolute;
-  top: calc(50% - 25px);
+  top: calc(50%);
   left: 50%;
   transform: translate(-50%, -50%);
+  height: 100%;
+  max-height: 520px;
+  // overflow-y: auto;
 
   &__list {
     position: relative;
@@ -82,5 +85,37 @@
   %transition {
     transition-property: transform, opacity;
     transition-duration: 250ms;
+  }
+}
+
+.show-hide-effect {
+  // .md-modal
+  -webkit-perspective: 1300px;
+  -moz-perspective: 1300px;
+  perspective: 1300px;
+  //
+
+  & > * {
+    // .md-content
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: rotateX(-70deg);
+    -moz-transform: rotateX(-70deg);
+    -ms-transform: rotateX(-70deg);
+    transform: rotateX(-70deg);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    opacity: 0;
+    //
+  }
+
+  .is-open & > * {
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    opacity: 1;
   }
 }
