@@ -9,3 +9,7 @@ $text-shadow: $color--dark 1px 1px 5px;
 // // %btn--standart-circle
 $btn--standart-circle__size: 40px;
 $btn--standart-circle__fill: $color--dark-opacity;
+
+:root {
+  --color-pale: #ffffff;
+}

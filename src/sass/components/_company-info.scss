@@ -1,39 +1,48 @@
 .company-info {
-  --company-info--pading: 22px;
-
-  //
   position: relative;
-
+  display: inline-flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
   width: inherit;
-  height: inherit;
+  padding: 25px 50px;
+  color: var(--color-pale);
+  // --company-info--pading: 22px;
 
-  padding: var(--company-info--pading);
+  // //
+  // position: relative;
+
+  // width: inherit;
+  // height: inherit;
+
+  // padding: var(--company-info--pading);
 
   //
 
   &__logo {
-    position: absolute;
-    top: var(--company-info--pading);
-    right: var(--company-info--pading);
+    // position: absolute;
+    width: 160px;
+    // position: absolute;
+    // top: var(--company-info--pading);
+    // right: var(--company-info--pading);
     // transition: 500ms;
   }
 
   &__title {
-    margin: 0;
-    padding: var(--company-info--pading);
+    // margin: 0;
+    // padding: var(--company-info--pading);
   }
 
   &__contacts {
-    position: absolute;
-    bottom: 52px;
-    left: 52px;
+    // position: absolute;
+    // bottom: 52px;
+    // left: 52px;
 
-    line-height: 1.5em;
+    // line-height: 1.5em;
   }
 }
 
 .contacts--decore {
-  color: #3fc1c0;
+  color: var(--color-pale);
 }
 
 .contacts--telephone {
@@ -42,27 +51,27 @@
 }
 
 //
-.downLeftCorner {
-  background: url(../images/theme/Corners.gif) no-repeat left;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  bottom: var(--company-info--pading);
-  left: var(--company-info--pading);
-}
-.topLeftCorner {
-  background: url(../images/theme/Corners.gif) no-repeat center;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: var(--company-info--pading);
-  left: var(--company-info--pading);
-}
-.downRightCorner {
-  background: url(../images/theme/Corners.gif) no-repeat right;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  bottom: var(--company-info--pading);
-  right: var(--company-info--pading);
-}
+// .downLeftCorner {
+//   background: url(../images/theme/Corners.gif) no-repeat left;
+//   width: 30px;
+//   height: 30px;
+//   position: absolute;
+//   bottom: var(--company-info--pading);
+//   left: var(--company-info--pading);
+// }
+// .topLeftCorner {
+//   background: url(../images/theme/Corners.gif) no-repeat center;
+//   width: 30px;
+//   height: 30px;
+//   position: absolute;
+//   top: var(--company-info--pading);
+//   left: var(--company-info--pading);
+// }
+// .downRightCorner {
+//   background: url(../images/theme/Corners.gif) no-repeat right;
+//   width: 30px;
+//   height: 30px;
+//   position: absolute;
+//   bottom: var(--company-info--pading);
+//   right: var(--company-info--pading);
+// }

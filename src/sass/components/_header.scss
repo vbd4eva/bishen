@@ -1,81 +1,81 @@
 .header {
   position: fixed;
-  z-index: 9;
+  z-index: 1;
   left: 0;
-  bottom: 0;
+  top: 0;
 
   width: 100%;
-  height: 60px;
+  // height: 60px;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-around;
 
-  color: $color--pale;
-  text-shadow: $text-shadow;
+  // color: $color--pale;
+  // text-shadow: $text-shadow;
 
   background-color: $color--dark-opacity;
 
-  transform: translateY(0);
-  transition: transform 300ms linear 0.3s;
+  // transform: translateY(0);
+  // transition: transform 300ms linear 0.3s;
 
-  &.hide-down {
-    transform: translateY(30px);
-  }
+  // &.hide-down {
+  //   transform: translateY(30px);
+  // }
 
   // &__contacts {
   //   text-transform: uppercase;
   // }
 
-  &__menu {
-    text-transform: uppercase;
-  }
+  // &__menu {
+  //   text-transform: uppercase;
+  // }
 
-  &__toggle-btn {
-    @extend %btn;
-    @extend %btn--standart-circle;
+  // &__toggle-btn {
+  //   @extend %btn;
+  //   @extend %btn--standart-circle;
 
-    background-color: $color--pale;
+  //   background-color: $color--pale;
 
-    &.is-open {
-      position: relative;
-      z-index: 92;
-      background-color: $color--dark;
-    }
+  //   &.is-open {
+  //     position: relative;
+  //     z-index: 92;
+  //     background-color: $color--dark;
+  //   }
 
-    & .icon-close,
-    &.is-open .icon-open {
-      display: none;
-    }
-    &.is-open .icon-close {
-      display: block;
-      fill: $color--pale;
-    }
-  }
+  //   & .icon-close,
+  //   &.is-open .icon-open {
+  //     display: none;
+  //   }
+  //   &.is-open .icon-close {
+  //     display: block;
+  //     fill: $color--pale;
+  //   }
+  // }
 
-  &__toggle-container {
-    pointer-events: none;
+  // &__toggle-container {
+  //   pointer-events: none;
 
-    display: block;
-    opacity: 0;
+  //   display: block;
+  //   opacity: 0;
 
-    position: absolute;
-    z-index: 91;
-    left: 0;
-    bottom: 0;
+  //   position: absolute;
+  //   z-index: 91;
+  //   left: 0;
+  //   bottom: 0;
 
-    width: 100%;
-    height: 100vh;
+  //   width: 100%;
+  //   height: 100vh;
 
-    background-color: $color--dark;
+  //   background-color: $color--dark;
 
-    transition: opacity 250ms ease-in-out;
+  //   transition: opacity 250ms ease-in-out;
 
-    &.is-open {
-      pointer-events: initial;
-      opacity: 1;
-    }
-  }
+  //   &.is-open {
+  //     pointer-events: initial;
+  //     opacity: 1;
+  //   }
+  // }
 
   //
 }
