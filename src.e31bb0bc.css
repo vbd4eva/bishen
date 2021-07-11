@@ -139,6 +139,10 @@ summary {
 }
 
 /* end normalize */
+:root {
+  --color-pale: #ffffff;
+}
+
 body {
   font-family: "Oswald", sans-serif;
   font-size: 16px;
@@ -165,16 +169,14 @@ address {
 }
 
 .btn,
-.double-arrow,
-.header__toggle-btn {
+.double-arrow {
   margin: 0;
   padding: 0;
   border: none;
   cursor: pointer;
 }
 .btn--standart-circle,
-.double-arrow,
-.header__toggle-btn {
+.double-arrow {
   position: relative;
   width: 40px;
   height: 40px;
@@ -191,116 +193,32 @@ address {
 
 .header {
   position: fixed;
-  z-index: 9;
+  z-index: 1;
   left: 0;
-  bottom: 0;
+  top: 0;
   width: 100%;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  color: #ffffff;
-  text-shadow: #000000 1px 1px 5px;
   background-color: rgba(0, 0, 0, 0.2);
-  transform: translateY(0);
-  transition: transform 300ms linear 0.3s;
-}
-.header.hide-down {
-  transform: translateY(30px);
-}
-.header__menu {
-  text-transform: uppercase;
-}
-.header__toggle-btn {
-  background-color: #ffffff;
-}
-.header__toggle-btn.is-open {
-  position: relative;
-  z-index: 92;
-  background-color: #000000;
-}
-.header__toggle-btn .icon-close, .header__toggle-btn.is-open .icon-open {
-  display: none;
-}
-.header__toggle-btn.is-open .icon-close {
-  display: block;
-  fill: #ffffff;
-}
-.header__toggle-container {
-  pointer-events: none;
-  display: block;
-  opacity: 0;
-  position: absolute;
-  z-index: 91;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: #000000;
-  transition: opacity 250ms ease-in-out;
-}
-.header__toggle-container.is-open {
-  pointer-events: initial;
-  opacity: 1;
 }
 
 .company-info {
-  --company-info--pading: 22px;
   position: relative;
+  display: inline-flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
   width: inherit;
-  height: inherit;
-  padding: var(--company-info--pading);
+  padding: 25px 50px;
+  color: var(--color-pale);
 }
 .company-info__logo {
-  position: absolute;
-  top: var(--company-info--pading);
-  right: var(--company-info--pading);
+  width: 160px;
 }
-.company-info__title {
-  margin: 0;
-  padding: var(--company-info--pading);
-}
-.company-info__contacts {
-  position: absolute;
-  bottom: 52px;
-  left: 52px;
-  line-height: 1.5em;
-}
-
 .contacts--decore {
-  color: #3fc1c0;
+  color: var(--color-pale);
 }
 
 .contacts--telephone {
   color: inherit;
   text-decoration: inherit;
-}
-
-.downLeftCorner {
-  background: url(/Corners.86e60c37.gif) no-repeat left;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  bottom: var(--company-info--pading);
-  left: var(--company-info--pading);
-}
-
-.topLeftCorner {
-  background: url(/Corners.86e60c37.gif) no-repeat center;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: var(--company-info--pading);
-  left: var(--company-info--pading);
-}
-
-.downRightCorner {
-  background: url(/Corners.86e60c37.gif) no-repeat right;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  bottom: var(--company-info--pading);
-  right: var(--company-info--pading);
 }
 
 .clients-in-slider-menu {
