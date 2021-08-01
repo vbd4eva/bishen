@@ -1,6 +1,6 @@
 .header {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   left: 0;
   top: 0;
 
@@ -31,9 +31,7 @@
   //   text-transform: uppercase;
   // }
 
-  // &__toggle-btn {
-  //   @extend %btn;
-  //   @extend %btn--standart-circle;
+
 
   //   background-color: $color--pale;
 

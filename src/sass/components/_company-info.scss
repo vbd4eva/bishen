@@ -27,27 +27,28 @@
     // transition: 500ms;
   }
 
-  &__title {
-    // margin: 0;
-    // padding: var(--company-info--pading);
-  }
+  // &__title {
+  //   margin: 0;
+  //   padding: var(--company-info--pading);
 
-  &__contacts {
-    // position: absolute;
-    // bottom: 52px;
-    // left: 52px;
+  // }
 
-    // line-height: 1.5em;
-  }
+  // &__contacts {
+  //   position: absolute;
+  //   bottom: 52px;
+  //   left: 52px;
+
+  //   line-height: 1.5em;
+  // }
 }
 
-.contacts--decore {
+.contacts__decore {
   color: var(--color-pale);
 }
 
-.contacts--telephone {
+.contacts__telephone {
   color: inherit;
-  text-decoration: inherit;
+  white-space: nowrap;
 }
 
 //
