@@ -96,13 +96,13 @@
 & .bottom {
   stroke-dasharray: 40 172;
 }
-&.active .top {
+.is-open & .top {
   stroke-dashoffset: -132px;
 }
-&.active .middle {
+.is-open & .middle {
   stroke-dashoffset: -71px;
 }
-&.active .bottom {
+.is-open & .bottom {
   stroke-dashoffset: -132px;
 }
 
