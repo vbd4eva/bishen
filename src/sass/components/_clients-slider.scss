@@ -35,16 +35,33 @@
   }
 
   &__textarea {
+    .slick-current &{
+      transform:  translateX(0);
+      opacity: 1;
+      // transform:  scale(1,1);
+    }
+
     position: absolute;
     z-index: 1;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 60px;
+    right:0;
+    // transform:  scale(0,1);
+    transform:  translateX(100%);
+    transform-origin: center right;
+
+    opacity: 0;
+    
+    transition-property: transform, opacity;
+    transition-duration: 500ms;
+    transition-timing-function: linear;
+    // transition-delay: 1000ms;
 
     margin: 0;
     padding: 10px;
 
-    background: yellow;
+    color: $color--pale;
+    background-color: $color--dark-opacity;
+    
   }
 
   &__menu{
