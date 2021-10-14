@@ -13,4 +13,4 @@ var animateButton = function (e) {
 
 var bubblyButtons = document
   .querySelector('.bubbly-button')
-  .addEventListener('click', animateButton, false);
+  ?.addEventListener('click', animateButton, false);

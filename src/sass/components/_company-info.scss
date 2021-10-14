@@ -66,10 +66,11 @@ text-align: start;
 
     &-togge-btn{
 
-     display: none;
-     @media screen and (max-width: 540px){
+    
+      display: block;
+     @media screen and (min-width: 540px){
        html.js &{
-         display: block;
+         display: none;
        }
      }
     }
