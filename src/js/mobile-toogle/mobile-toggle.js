@@ -1,88 +1,66 @@
-export default class MobileToggle { 
+export default class MobileToggle {
+  constructor(...args) {
+    const [dataMark, params] = args;
+    this.params = params;
+    this._setRefs(dataMark) && this._init();
+  }
 
-    constructor(dataMark) {       
-        this._setRefs(dataMark) && this._init();
+  _setRefs(dataMark) {
+    const containerMark = `[${dataMark}]`;
+    const buttonMark = `[${dataMark}-button]`;
+
+    const containerEl = document.querySelector(containerMark);
+    const buttonEl = document.querySelector(buttonMark);
+
+    this.refs = { containerEl, buttonEl };
+
+    return this._checkRefs(containerMark);
+  }
+
+  _checkRefs(containerMark) {
+    if (!this.refs.containerEl || !this.refs.buttonEl) {
+      this.error =
+        'Ошибка! : переданній єлемент ' + containerMark + ' не найден';
+      console.log(this.error);
+      return;
     }
+    return true;
+  }
 
+  _init() {
+    this.refs.buttonEl.addEventListener('click', this._toggleMenu.bind(this));
 
+    this.refs.containerEl.addEventListener(
+      'click',
+      this._containerClickHandler.bind(this),
+    );
+  }
 
-    _setRefs(dataMark) { 
-        const containerMark = `[${dataMark}]`;
-        const buttonMark = `[${dataMark}-button]`;
+  _closeAll() {
+    this.refs.buttonEl.classList.remove('is-open');
 
-        const containerEl = document.querySelector(containerMark);
-        const buttonEl = document.querySelector(buttonMark);
+    this.refs.containerEl.classList.remove('is-open');
 
-        this.refs = { containerEl, buttonEl };
+    this.refs.buttonEl.setAttribute('aria-expanded', false);
 
-        return this._checkRefs(containerMark);
-    }
+    document.documentElement.classList.remove('y-scroll-off');
+  }
 
-    _checkRefs(containerMark) { 
-        if (!this.refs.containerEl || !this.refs.buttonEl) { 
-            this.error = "Ошибка! : переданній єлемент " + containerMark + " не найден";
-            console.log( this.error );
-            return;
-        }
-        return true;
-    };
+  _toggleMenu() {
+    const expanded =
+      this.refs.buttonEl.getAttribute('aria-expanded') === 'true';
 
-    _init() { 
-        this.refs.buttonEl.addEventListener("click", this._toggleMenu.bind(this));
+    this.refs.buttonEl.classList.toggle('is-open');
+    this.refs.buttonEl.setAttribute('aria-expanded', !expanded);
 
-        this.refs.containerEl.addEventListener('click', this._containerClickHandler.bind(this));
-    };
+    this.refs.containerEl.classList.toggle('is-open');
 
+    const { bodyScroll } = this?.params || {};
+    if (bodyScroll) document.documentElement.classList.toggle('y-scroll-off');
+  }
 
-    _closeAll() {
-
-        this.refs.buttonEl.classList.remove("is-open");
-
-        this.refs.containerEl.classList.remove("is-open");   
-
-        this.refs.buttonEl.setAttribute("aria-expanded", false);
-        
-        document.documentElement.classList.remove('y-scroll-off');
-    };
-
-    _toggleMenu() { 
-
-        const expanded = this.refs.buttonEl.getAttribute("aria-expanded") === "true";
-        // const expanded = this.refs.buttonEl.getAttribute("aria-expanded") === "true" || false;
-
-        // this._listenScroll(!expanded);
-
-        this.refs.buttonEl.classList.toggle("is-open");
-        this.refs.buttonEl.setAttribute("aria-expanded", !expanded);
-
-        this.refs.containerEl.classList.toggle("is-open");     
-        
-        document.documentElement.classList.toggle('y-scroll-off');
-    }
-
-    // _listenScroll(resolution) { 
-
-    //     if (resolution) {
-    //         document.addEventListener('scroll', this._stopScrollPropagation);
-    //     }
-    //     else {
-    //         document.removeEventListener('scroll', this._stopScrollPropagation);
-    //     }
-    // }
-
-    // _stopScrollPropagation(e) { 
-    //     e.stopPropagation();
-    //     console.log(e);
-    // }
-
-    _containerClickHandler(e) {
-        e.stopPropagation();
-        // console.log(e.target.classList.contains('js-mobile-menu-close'));
-
-        if (e.target.classList.contains('js-mobile-menu-close'))
-            this._closeAll();
-    }
-
+  _containerClickHandler(e) {
+    e.stopPropagation();
+    if (e.target.classList.contains('js-mobile-menu-close')) this._closeAll();
+  }
 }
-
-
