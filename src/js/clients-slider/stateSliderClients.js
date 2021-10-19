@@ -1,6 +1,9 @@
 // object-dictionary of constants and settings of the "Clients" block
 // объект-словарь констант и настроек блока "Клиенты Слайдер"
 
+//  '<button class="client-slider__arrow double-arrow js-double-arrow-animate" aria-label="Previous" type="button">попередній слайд</button>',
+// '<button class="client-slider__arrow double-arrow js-double-arrow-animate" aria-label="Next" type="button">наступний слайд</button>',
+
 const stateSliderClients = {
   refs: {
     container: '.js-clients',
@@ -10,9 +13,9 @@ const stateSliderClients = {
   html: {
     sliderCustomButtons: {
       prevArrow:
-        '<button class="client-slider__arrow double-arrow js-double-arrow-animate" aria-label="Previous" type="button">попередній слайд</button>',
+        '<button class="client-slider__arrow client-slider__arrow--previous double-arrow js-double-arrow-animate" aria-label="попередній слайд" type="button"></button>',
       nextArrow:
-        '<button class="client-slider__arrow double-arrow js-double-arrow-animate" aria-label="Next" type="button">наступний слайд</button>',
+        '<button class="client-slider__arrow client-slider__arrow--next double-arrow js-double-arrow-animate" aria-label="наступний слайд" type="button"></button>',
     },
   },
 

@@ -4,17 +4,17 @@
 .client-slider {
   position: relative;
 
-  &__arrow.double-arrow {
+  &__arrow {
     position: absolute;
     z-index: 1;
     top: 50%;
 
-    &[aria-label='Previous'] {
+    &--previous {
       left: 25px;
       transform: translateY(-50%) rotate(180deg);
     }
 
-    &[aria-label='Next'] {
+    &--next {
       right: 25px;
       transform: translateY(-50%);
     }
