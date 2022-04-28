@@ -20,7 +20,8 @@
     "dev": "parcel ./src/index.html",
     "build": "parcel build ./src/*.html --public-url /bishen/",
     "deploy": "gh-pages -d dist",
-    "predeploy": "npm run build"
+    "predeploy": "npm run build",
+    "hostbuild": "parcel build ./src/*.html --public-url /"
   },
   "repository": {
     "type": "git",
