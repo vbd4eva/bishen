@@ -1,46 +1,61 @@
 .company-info {
   position: relative;
-  display: inline-flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  width: inherit;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction:column;
+  align-items: center;
+
   padding: 25px 50px;
   color: var(--color-pale);
-  // --company-info--pading: 22px;
 
-  // //
-  // position: relative;
-
-  // width: inherit;
-  // height: inherit;
-
-  // padding: var(--company-info--pading);
-
-  //
-
-  &__logo {
-    // position: absolute;
-    width: 160px;
-    // position: absolute;
-    // top: var(--company-info--pading);
-    // right: var(--company-info--pading);
-    // transition: 500ms;
+  html.js &{
+    flex-direction:row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 
-  // &__title {
-  //   margin: 0;
-  //   padding: var(--company-info--pading);
+  &__logo {
+    width: 160px;
+  }
 
-  // }
+  &__title, &__adress {
+    @extend %visually-hidden;
 
-  // &__contacts {
-  //   position: absolute;
-  //   bottom: 52px;
-  //   left: 52px;
+  }
 
-  //   line-height: 1.5em;
-  // }
+  &__contacts {    
+    text-align: center;
+    padding-top: 25px;
+  }
+
+  &__contacts-togge-btn{    
+      display: none;
+      top: 5px;
+      fill: $color--pale;
+     html.js &{
+       display: block;
+     }
 }
+
+.contacts__icon--open,
+.contacts__icon--close{
+  opacity: 0.7;
+}
+.contacts__icon--close,
+.is-open .contacts__icon--open{
+  display: none;
+}
+.contacts__icon--open,
+.is-open .contacts__icon--close
+ {
+  display: block;
+}
+.contacts__icon--close{
+  transform-origin: center center;
+  transform: rotate(-90deg);
+}
+
 
 .contacts__decore {
   color: var(--color-pale);
@@ -51,28 +66,55 @@
   white-space: nowrap;
 }
 
-//
-// .downLeftCorner {
-//   background: url(../images/theme/Corners.gif) no-repeat left;
-//   width: 30px;
-//   height: 30px;
-//   position: absolute;
-//   bottom: var(--company-info--pading);
-//   left: var(--company-info--pading);
-// }
-// .topLeftCorner {
-//   background: url(../images/theme/Corners.gif) no-repeat center;
-//   width: 30px;
-//   height: 30px;
-//   position: absolute;
-//   top: var(--company-info--pading);
-//   left: var(--company-info--pading);
-// }
-// .downRightCorner {
-//   background: url(../images/theme/Corners.gif) no-repeat right;
-//   width: 30px;
-//   height: 30px;
-//   position: absolute;
-//   bottom: var(--company-info--pading);
-//   right: var(--company-info--pading);
-// }
+  @media screen and (min-width: 520px) {
+    &{  
+       flex-direction: row-reverse;
+       justify-content: space-between;
+      }
+    &__contacts{
+        padding-top: 0;
+        text-align: start;
+      }
+
+    html.js &__contacts-togge-btn{     
+         display: none;
+      }
+  } 
+
+  @media screen and (max-width: 519px) {
+   
+    html.js &__contacts{
+      pointer-events: none;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top:0;
+
+      padding: inherit;
+
+      background-color: $color--dark-opacity;
+      text-align: end;
+      transform: translateY(0);
+      opacity: 0;
+    transition: transform 250ms ease-in-out 50ms,
+                opacity 250ms ease-in-out 50ms;
+
+      &.is-open{
+      pointer-events: visible;
+      transform: translateY(100%);
+      opacity: 1;
+    }
+  }
+
+  } 
+  @media screen and (max-width: 359px) {
+   
+    html.js &{
+     flex-direction: column;
+     align-items: center;
+    }
+
+  } 
+
+}
+

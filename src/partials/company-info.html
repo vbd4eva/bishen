@@ -3,18 +3,36 @@
   itemscope=""
   itemtype="http://schema.org/Organization"
 >
-  <!-- <img
+  <!-- <include src="./partials/logo.html"></include> -->
+  <img
     class="company-info__logo"
-    alt="Логотип Бишен"
-    title="Логотип Бишен"
-    itemprop="logo"
-    src="https://bishen.com.ua/img/logoBishen.gif"
-  /> -->
-  <include src="./partials/logo.html"></include>
+    src="./img/Bishen_logo.png"
+    alt="Bishen логотип"
+  />
 
-  <!-- <h1 class="company-info__title" itemprop="legalName">TOB "Бишен Принт Продакшн"</h1> -->
+  <h1 class="company-info__title">
+    <span itemprop="legalName">TOB "Бішен Прінт Продакшн"</span>, - офіціна
+    сторінка підприємства.
+  </h1>
 
-  <address class="company-info__contacts">
+  <button
+    class="btn btn--standart-circle company-info__contacts-togge-btn"
+    aria-label="перемикач інформаційного блоку"
+    data-contacts-button
+  >
+    <svg width="40px" height="40px">
+      <use
+        class="contacts__icon--close"
+        href="./img/svg-images.svg#arrow-in-circle"
+      ></use>
+      <use
+        class="contacts__icon--open"
+        href="./img/svg-images.svg#information-icon"
+      ></use>
+    </svg>
+  </button>
+
+  <address class="company-info__contacts" data-contacts>
     <div class="phoneNumbers">
       <a
         itemprop="telephone"
@@ -23,7 +41,6 @@
         >(096) 017 17 63</a
       >
 
-      <!-- <span class="contacts__decore">◈</span> -->
       <span class="contacts__decore">·</span>
 
       <a
@@ -36,27 +53,19 @@
 
     <span class="contacts__decore">|</span>
 
-    <div itemprop="email" class="email">irina@bishen.com.ua</div>
+    <div itemprop="email" class="company-info__email">irina@bishen.com.ua</div>
 
-    <!-- <span class="contacts__decore">|</span> -->
-
-    <!-- <div
+    <div
       itemprop="address"
       itemscope=""
       itemtype="http://schema.org/PostalAddress"
-      class="adress"
+      class="company-info__adress"
     >
-      <span itemprop="streetAddress">ул. Семьи Хохловых, 15</span>,
+      <span itemprop="streetAddress">вул. Сім'ї Хохлових, 15</span>,
 
-      <span itemprop="addressLocality">Киев</span>,
+      <span itemprop="addressLocality">Київ</span>,
 
-      <span itemprop="addressCountry">Украина</span>
-    </div> -->
+      <span itemprop="addressCountry">Україна</span>
+    </div>
   </address>
-
-  <!-- Corners -->
-  <!-- <div class="downLeftCorner"></div>
-            <div class="topLeftCorner"></div>
-            <div class="downRightCorner"></div> -->
-  <!-- -->
 </div>
