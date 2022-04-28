@@ -3,6 +3,7 @@ export default class MobileToggle {
     const [dataMark, params] = args;
     this.params = params;
     this._setRefs(dataMark) && this._init();
+    this.keyDownHandler = this._keyDownHandler.bind(this);
   }
 
   _setRefs(dataMark) {
@@ -45,10 +46,18 @@ export default class MobileToggle {
 
     document.documentElement.classList.remove('y-scroll-off');
   }
-
+  _keyDownHandler(e) {
+    if (e.key === 'Escape') this._toggleMenu();
+  }
   _toggleMenu() {
     const expanded =
       this.refs.buttonEl.getAttribute('aria-expanded') === 'true';
+
+    if (!expanded) {
+      window.addEventListener('keydown', this.keyDownHandler);
+    } else {
+      window.removeEventListener('keydown', this.keyDownHandler);
+    }
 
     this.refs.buttonEl.classList.toggle('is-open');
     this.refs.buttonEl.setAttribute('aria-expanded', !expanded);
