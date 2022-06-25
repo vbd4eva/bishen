@@ -1,0 +1,29 @@
+  
+    <div class="phoneNumbers">
+        {{#each tel}}
+        <a
+            itemprop="telephone"
+            class="contacts__telephone"
+            href="tel:+{{this.[1]}}"
+            >{{this.[0]}}</a
+        >
+       {{#unless @last}} <span class="contacts__decore">·</span>{{/unless}}
+      {{/each}}
+    </div>
+
+    <span class="contacts__decore">|</span>
+
+    <div itemprop="email" class="company-info__email">{{mail}}</div>
+
+    <div
+      itemprop="address"
+      itemscope=""
+      itemtype="http://schema.org/PostalAddress"
+      class="company-info__adress"
+    >
+      <span itemprop="streetAddress">{{address.street}}</span>
+
+      <span itemprop="addressLocality">{{address.сity}}</span>
+
+      <span itemprop="addressCountry">{{address.сountry}}</span>
+    </div>

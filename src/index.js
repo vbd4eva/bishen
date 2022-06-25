@@ -1,6 +1,8 @@
 document.querySelector('html').classList.remove('no-js');
 document.querySelector('html').classList.add('js');
 
+import './js/contentData/initContentData.js';
+
 import './sass/main.scss';
 
 import './js/clients-slider/init';

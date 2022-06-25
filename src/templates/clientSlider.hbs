@@ -1,0 +1,20 @@
+
+ {{#each list}}
+    <div data-id="{{@index}}" class="js-client-slider client-slider" id="{{name}}">
+        {{#each imgs}}
+          <div class="client-slider__slide">
+            <img
+                    class="client-slider__picture"
+                    alt=""
+                    src="{{src}}"
+                    srcset="{{srcset}}"
+                    sizes=" (max-width: 767px) 100vw, (max-width: 1279px) 100vw, (max-width: 1919px) 100vw, (min-width: 1920px) 100vw"
+                    loading="lazy"
+                />
+                <!-- <p class="client-slider__textarea">01-slide</p> -->
+          </div>
+        {{/each}}
+
+    </div>
+    
+{{/each}}

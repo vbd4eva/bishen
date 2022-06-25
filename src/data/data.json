@@ -1,0 +1,27 @@
+{
+  "companyInfo": {
+    "tel": ["(096) 017 17 63", "(093) 715-37-07"],
+    "mail": "irina@bishen.com.ua",
+    "address": {
+      "street": "вул. Сім'ї Хохлових, 15",
+      "сity": "Київ",
+      "сountry": "Україна"
+    }
+  },
+  "sliderClientList": {
+    "catch": "4",
+    "bigoli": "3",
+    "forrest": "6",
+    "vec": "7",
+    "kfm": "7",
+    "envelopes": "8",
+    "kellers": "4",
+    "pekary": "6",
+    "atlas": "7",
+    "saperavi": "4"
+  },
+  "routes": {
+    "root": "https://bishen.com.ua/",
+    "sliderImgs": "data/images/clients/"
+  }
+}
